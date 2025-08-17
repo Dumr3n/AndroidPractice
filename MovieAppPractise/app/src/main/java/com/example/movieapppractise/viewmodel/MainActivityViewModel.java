@@ -18,7 +18,7 @@ public class MainActivityViewModel extends AndroidViewModel {
         super(application);
         this.movieRepository = new MovieRepository(application);
     }
-    public LiveData<List<Movie>> getAllMovies{
-        movieRepository.getMutableLiveData();
+    public LiveData<List<Movie>> getAllMovies() {
+        return movieRepository.getMutableLiveData();
     }
 }
