@@ -16,7 +16,6 @@ public class ChatMessage {
         this.senderId = senderId;
         this.time = time;
         this.text = text;
-        isMine = senderId.equals(FirebaseAuth.getInstance().getCurrentUser().getUid());
     }
 
     public ChatMessage() {
@@ -47,7 +46,7 @@ public class ChatMessage {
     }
 
     public boolean isMine() {
-        return isMine;
+        return  senderId.equals(FirebaseAuth.getInstance().getCurrentUser().getUid());
     }
 
     public void setMine(boolean mine) {
